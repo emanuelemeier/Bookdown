@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Il progetto | Un esempio di Report</title>
+  <meta name="description" content="Esempio di report informatizzato che si potrebbe pensare di presentare al cantone." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Il progetto | Un esempio di Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Esempio di report informatizzato che si potrebbe pensare di presentare al cantone." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Il progetto | Un esempio di Report" />
+  
+  <meta name="twitter:description" content="Esempio di report informatizzato che si potrebbe pensare di presentare al cantone." />
+  
+
+<meta name="author" content="Emanuele Meier" />
+
+
+<meta name="date" content="2021-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="analisi-dei-risultati-delle-prove.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Un esempio di report</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Premessa</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Il progetto</a></li>
+<li class="chapter" data-level="3" data-path="analisi-dei-risultati-delle-prove.html"><a href="analisi-dei-risultati-delle-prove.html"><i class="fa fa-check"></i><b>3</b> Analisi dei risultati delle prove</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analisi-dei-risultati-delle-prove.html"><a href="analisi-dei-risultati-delle-prove.html#informazioni-generali"><i class="fa fa-check"></i><b>3.1</b> Informazioni generali</a></li>
+<li class="chapter" data-level="3.2" data-path="analisi-dei-risultati-delle-prove.html"><a href="analisi-dei-risultati-delle-prove.html#correlazioni-tra-le-dimensioni-valutate-con-la-prova"><i class="fa fa-check"></i><b>3.2</b> Correlazioni tra le dimensioni valutate con la prova</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="il-contesto-e-la-scuola.html"><a href="il-contesto-e-la-scuola.html"><i class="fa fa-check"></i><b>4</b> Il contesto e la scuola</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="il-contesto-e-la-scuola.html"><a href="il-contesto-e-la-scuola.html#ispettorati"><i class="fa fa-check"></i><b>4.1</b> Ispettorati</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Un esempio di Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Il progetto</h1>
+<p>Il presente rapporto fa seguito a due rapporti analoghi prodotti il primo sulla base dei risultati alle prove di matematica in IV elementare (Cirse, 2014) e il secondo alle prove di italiano in III elementare (Cirse, 2016).</p>
+<p>Per quanto riguarda questo progetto nel suo insieme si è svolto negli anni scolastici dal 2013 al 2015.</p>
+<p>L’insieme delle valutazioni tramite prove standardizzate ha il duplice obiettivo di fornire delle informazioni di monitoraggio del sistema educativo (oggetto specifico di questo rapporto) e di fornire ai docenti, diretto-ri e ispettori delle informazioni di dettaglio relative all’andamento delle specifiche classi.</p>
+<p>Lo svolgimento del progetto di Matematica e la struttura del rapporto riprendono quelli degli altri rapporti. La presentazione e le dimensioni teoriche sono molto simili e si rimanda per gli approfondimenti del caso ai documenti già esistenti; alcune parti che si riteneva potessero giovare alla lettura ancorché già esistenti sono state messe in appendice.</p>
+<p>I primi mesi del progetto sono stati impiegati per il consolidamento della rete di collaborazione. Questa è stata composta dal gruppo di esperti del territorio (in questo caso il termine non fa riferimento esclusivo agli esperti disciplinari della Scuola Media bensì a persone che fossero portatori di un sapere e di una conoscenza utile alla riflessione su questo oggetto), individuati grazie alla collaborazione con l’Ufficio Scuole Comunali (USC) e con il Dipartimento Formazione e Apprendimento (DFA).</p>
+<p>La prima fase del progetto, sino ad agosto 2013, è stata dedicata alla definizione dei contenuti da testare e all’identificazione delle persone che avrebbero potuto sviluppare gli item.
+La scelta dei settori da investigare è fondamentale in quanto sarebbe estremamente difficoltoso valutare contemporaneamente tutte le competenze presenti in una disciplina in modo esatto. Il modello di analisi che è stato utilizzato è legato alla Item Response Theory (IRT) ed è costruito al fine di avere delle misure precise di costrutti ben definiti e quanto più possibili unitari, in appendice è presente una spiegazione maggiormente dettagliata (vedi Appendice 2 “Competenze fondamentali e prove”).</p>
+<p>Nell’elaborazione della prova sono stati presi in considerazione, attingendoli al Piano di studio della scuo-la dell’obbligo (Divisione della scuola, 2015), sei Traguardi di competenza: Grandezze e misure – Esegui-re e applicare, Grandezze e misure – Sapere, riconoscere e descrivere, Numeri e calcolo – Matematiz-zare e modellizzare, Grandezze e misure – Matematizzare e modellizzare, Numeri e calcolo – Sapere, riconoscere e descrivere, Numeri e calcolo – Eseguire e applicare. L’insieme delle risposte alle domande ha costituito una misura generale chiamata Matematica Generale.</p>
+<p>Successivamente, sono stati sviluppati gli item per testare ognuna delle parti stabilite. Nel costruire gli item si è dovuto tener conto di alcune indicazioni. In primo luogo ogni item doveva essere quanto più possibile mono dimensionale. Il lavoro in questa fase è stato svolto in stretta collaborazione con gli esper-ti di Didattica della Matematica operanti nel DECS e nel DFA. Per poter misurare la capacità di discrimi-nazione dell’item (si parla di capacità discriminativa relativamente al fatto che l’item riceva risposte corret-te dagli allievi più abili e scorrette da quelli meno abili) e anche la sua coerenza con la dimensione che si desiderava valutare è infatti necessario che ogni item sia attinente a una e una sola dimensione. Questa caratteristica rende questi item in sé differenti da quelli che normalmente sono utilizzati dai docenti duran-te la loro attività professionale. In secondo luogo si è dovuto creare un numero di item sovrabbondante rispetto all’uso finale. Si è dovuto infatti prevedere che successivamente alla prova campione sarebbe stato eliminato almeno il 30% degli item prodotti.</p>
+<p>Una volta prodotti gli item e sottoposti a verifica di contenuto con l’assistenza degli esperti, si è proceduto alla preparazione della prova campione. Questa prova aveva lo scopo di valutare la pertinenza degli item e di individuare quelli più efficaci a misurare e a discriminare. Ordinandoli per difficoltà crescente si do-vrebbe trovare un numero inizialmente molto elevato di allievi che risponderà correttamente e questo numero dovrebbe ridursi al crescere della difficoltà. Se un item ad esempio, riceverà, un numero di rispo-ste corrette elevato ma solo dagli allievi meno abili questo sarà scartato, parimenti saranno eliminati gli item non discriminanti, quelli cioè ai quali tutti o nessuno avranno risposto. Queste procedure hanno infat-ti lo scopo di costruire delle scale valide non in termini astratti ma all’interno delle popolazioni reali. Gli item costruiti sono infatti coerenti con i contenuti presentati nella scuola ticinese e la loro difficoltà è valu-tata rispetto agli allievi della stessa scuola.
+Concretamente, sono stati realizzati 10 fascicoli differenti, ciascuno di essi richiedeva un tempo di rispo-sta di 45 minuti. Questa distribuzione apparentemente complessa era necessaria per garantire che ogni item fosse testato su almeno 300 allievi e ogni allievo venisse confrontato con 2 fascicoli, l’uno a distanza di una settimana dall’altro. La distanza di una settimana è stata ritenuta quella minima per poter ritenere l’effetto di apprendimento residuale. Ogni allievo ha quindi ricevuto due fascicoli diversi assegnati ca-sualmente e le classi sono state estratte in modo da essere rappresentative della popolazione degli stu-denti ticinesi. Si è scelto di utilizzare un campionamento basato sulle classi scolastiche, in quanto meno invasivo e per altro accettato all’interno delle principali ricerche nazionali e internazionali. Sono stati testa-ti circa 1600 allievi pari al 50% della popolazione complessiva.</p>
+<p>La somministrazione è stata curata da personale esterno alla scuola che si è occupato di portare le prove nelle singole classi, far eseguire il lavoro agli allievi e recuperare poi i materiali distribuiti. Quest’ultima fa-se è estremamente rilevante in quanto gli esercizi proposti in questa fase dei lavori non hanno ancora subito alcun processo di validazione e non possono essere ritenuti efficaci alla valutazione delle compe-tenze specifiche, non vi sono infatti valori che ne indichino l’efficacia o la difficoltà in alcun modo. Si deve anche sottolineare come un esercizio diffuso in maniera non corretta (ad esempio tramite fotocopie del materiale) potrebbe rendere l’attività di valutazione non valida in quanto introdurrebbe una condizione di non equità di fronte alla prova. Un problema più ampio legato alla disponibilità degli esercizi è quello defi-nito in letteratura “teaching for testing” (Flukiger, 2004) del quale si discuterà più oltre.</p>
+<p>Tutti i questionari sono stati quindi raccolti e le risposte sono state inserite in un archivio al fine di poter valutare la bontà metrica degli esercizi. I singoli esercizi, le scale e l’insieme degli esercizi sono stati quindi valutati utilizzando il modello di Rasch, al fine di capire come costruire le successive prove e quali esercizi conservare. Queste analisi hanno permesso di identificare 90 esercizi con buone capacità metri-che divisi nei 6 settori. Di seguito vedremo un sunto delle analisi effettuate.</p>
+<p>Dagli esercizi è stato possibile realizzare due fascicoli, la prova complessivamente comprendeva 90 item, 15 per ogni traguardo di competenza. La finestra di tempo nella quale questa prova doveva avvenire è stata di due settimane.</p>
+<p>Per evitare inoltre gli effetti visti nelle medesime ricerche si è stabilito di far svolgere le attività di sommi-nistrazione esclusivamente a personale formato specificatamente, ciò anche per non portare un aggravio di lavoro al personale insegnante.</p>
+<p>Una volta raccolte le prove gli item sono stati nuovamente sottoposti ad una analisi relativa alla identifica-zione della difficoltà rispetto alla popolazione degli allievi, sulla base di questi valori sono state successi-vamente svolte le analisi. Nel periodo estivo sono stati elaborati tre tipi di rapporti. Il primo tipo è stato consegnato ad ogni docente che avesse avuto una classe testata, il secondo ad ogni direttore nel cui istituto fosse stata testata una classe e il terzo ad ogni ispettore. Ogni docente ha ricevuto un rapporto rela-tivo alla sua classe nel quale si mostrava per la classe e per ogni allievo relativamente ad ogni singolo settore il punteggio medio1 rispetto al circondario e all’insieme della popolazione testata. Analogamente ai direttori e agli ispettori sono stati inviati rapporti, relativamente, all’istituto e al circondario di competen-za. Il direttore dell’Ufficio Scuole Comunali ha ricevuto l’insieme dei rapporti assieme ad una sintesi gene-rale.
+Nel capitolo relativo alle analisi verranno letti i dati raccolti secondo tre punti di osservazione differenti: il territorio, le classi e gli allievi.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analisi-dei-risultati-delle-prove.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-progetto.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
